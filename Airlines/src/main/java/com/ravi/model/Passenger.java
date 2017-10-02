@@ -7,6 +7,17 @@ public class Passenger {
 	private int age;
 	private String gender;
 	private String phone; // Phone numbers must be unique
+	
+	
+	
+	
+	public Passenger(String firstname, String lastname, int age, String gender) {
+		super();
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.age = age;
+		this.gender = gender;
+	}
 	public String getId() {
 		return id;
 	}
