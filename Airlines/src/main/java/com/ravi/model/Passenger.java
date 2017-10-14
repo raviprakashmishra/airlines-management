@@ -1,7 +1,12 @@
 package com.ravi.model;
 
+import java.util.UUID;
+
+import org.springframework.data.cassandra.mapping.Table;
+
+@Table("passengers")
 public class Passenger {
-	private String id;
+	private UUID id;
 	private String firstname;
 	private String lastname;
 	private int age;
@@ -17,8 +22,9 @@ public class Passenger {
 		this.lastname = lastname;
 		this.age = age;
 		this.gender = gender;
+		this.id = UUID.randomUUID();
 	}
-	public String getId() {
+	public UUID getId() {
 		return id;
 	}
 	public String getFirstname() {
