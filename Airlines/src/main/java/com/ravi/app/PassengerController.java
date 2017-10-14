@@ -7,19 +7,23 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ravi.model.Passenger;
-import com.ravi.service.PassengerService;
+import com.ravi.service.PassengerRepository;
 
 @RestController
 public class PassengerController {
 
+	//private PassengerService passengerService;
+	
 	@Autowired
-	private PassengerService passengerService;
+	private PassengerRepository passRepository;
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/passenger", params = {"firstname", "lastname",
 			"age","gender"})
 	public Passenger createPassenger(@RequestParam("firstname") String firstName, @RequestParam("lastname") String lastName,
 			@RequestParam("age") int age, @RequestParam("gender") String gender) {
-		passengerService.createPassenger(firstName, lastName, age, gender);
-		return null;
+		//Passenger passenger = passengerService.createPassenger(firstName, lastName, age, gender);
+		Passenger passenger = new Passenger(firstName, lastName, age, gender);
+		passRepository.save(passenger);
+		return passenger;
 	}
 }
