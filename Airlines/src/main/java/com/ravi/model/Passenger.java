@@ -2,10 +2,12 @@ package com.ravi.model;
 
 import java.util.UUID;
 
+import org.springframework.data.cassandra.mapping.PrimaryKey;
 import org.springframework.data.cassandra.mapping.Table;
 
 @Table("passengers")
 public class Passenger {
+	@PrimaryKey
 	private UUID id;
 	private String firstname;
 	private String lastname;
