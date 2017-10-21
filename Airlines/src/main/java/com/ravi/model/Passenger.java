@@ -3,6 +3,7 @@ package com.ravi.model;
 import java.util.UUID;
 
 import org.springframework.data.cassandra.mapping.PrimaryKey;
+import org.springframework.data.cassandra.mapping.PrimaryKeyClass;
 import org.springframework.data.cassandra.mapping.Table;
 
 @Table("passengers")
