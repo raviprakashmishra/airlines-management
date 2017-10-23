@@ -1,20 +1,21 @@
 package com.ravi.model;
 
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.data.cassandra.mapping.PrimaryKey;
-import org.springframework.data.cassandra.mapping.PrimaryKeyClass;
 import org.springframework.data.cassandra.mapping.Table;
 
 @Table("passengers")
 public class Passenger {
 	@PrimaryKey
-	private UUID id;
-	private String firstname;
-	private String lastname;
-	private int age;
-	private String gender;
-	private String phone; // Phone numbers must be unique
+	private UUID 				id;
+	private String 				firstname;
+	private String 				lastname;
+	private int 				age;
+	private String 				gender;
+	private String 				phone; // Phone numbers must be unique
+	private List<Reservation> 	reservations ;
 	
 	
 	
@@ -44,5 +45,12 @@ public class Passenger {
 	}
 	public String getPhone() {
 		return phone;
+	}
+	
+	public List<Reservation> getReservations() {
+		return reservations;
+	}
+	public void setReservations(List<Reservation> reservations) {
+		this.reservations = reservations;
 	}
 }
