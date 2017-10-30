@@ -12,7 +12,7 @@ public class Flight {
 	private Date 			arrivalTime;
 	private int 			seatsLeft;
 	private String 			description;
-	private Plane 			plane; // Embedded
+	private Plane 			plane; 
 	private List<Passenger> passengers;
 	
 	
